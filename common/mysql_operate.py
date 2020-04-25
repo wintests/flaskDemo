@@ -23,6 +23,8 @@ class MysqlDb():
 
     def select_db(self, sql):
         """查询"""
+        # 检查连接是否断开，如果断开就进行重连
+        self.conn.ping(reconnect=True)
         # 使用 execute() 执行sql
         self.cur.execute(sql)
         # 使用 fetchall() 获取查询结果
@@ -32,6 +34,8 @@ class MysqlDb():
     def execute_db(self, sql):
         """更新/新增/删除"""
         try:
+            # 检查连接是否断开，如果断开就进行重连
+            self.conn.ping(reconnect=True)
             # 使用 execute() 执行sql
             self.cur.execute(sql)
             # 提交事务
