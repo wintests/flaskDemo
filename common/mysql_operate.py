@@ -1,5 +1,5 @@
 import pymysql
-from config.setting import MYSQL_HOST,MYSQL_PORT,MYSQL_USER,MYSQL_PASSWD,MYSQL_DB
+from config.setting import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASSWD, MYSQL_DB
 
 class MysqlDb():
 
