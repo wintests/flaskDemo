@@ -1,0 +1,3 @@
+PyMySQL==0.9.3
+Flask==1.0.3
+redis==3.4.1
