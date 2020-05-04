@@ -10,7 +10,8 @@ class MysqlDb():
             port=port,
             user=user,
             passwd=passwd,
-            db=db
+            db=db,
+            autocommit=True
         )
         # 通过 cursor() 创建游标对象，并让查询结果以字典格式输出
         self.cur = self.conn.cursor(cursor=pymysql.cursors.DictCursor)
