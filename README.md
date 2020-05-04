@@ -32,7 +32,7 @@ CREATE TABLE `user` (
   `telephone` varchar(255) NOT NULL,
   `address` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `phone` (`telephone`)
+  UNIQUE KEY `telephone` (`telephone`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
@@ -54,21 +54,21 @@ address：联系地址，允许为空
 
 ```
 请求方式：GET
-请求地址：http://127.0.0.1:5000/users
+请求地址：http://127.0.0.1:9999/users
 ```
 
 - 获取wintest用户接口请求示例（可直接在浏览器输入栏请求）：
 
 ```
 请求方式：GET
-请求地址：http://127.0.0.1:5000/users/wintest
+请求地址：http://127.0.0.1:9999/users/wintest
 ```
 
 - 用户注册接口请求示例：
 
 ```
 请求方式：POST
-请求地址：http://127.0.0.1:5000/register
+请求地址：http://127.0.0.1:9999/register
 请求头：
 Content-Type: application/json
 
@@ -79,7 +79,7 @@ Body：{"username": "wintest5", "password": "123456", "sex": "1", "telephone":"1
 
 ```
 请求方式：POST
-请求地址：http://127.0.0.1:5000/login
+请求地址：http://127.0.0.1:9999/login
 请求头：
 Content-Type: application/x-www-form-urlencoded
 
@@ -90,20 +90,20 @@ Body：username=wintest&password=123456
 
 ```
 请求方式：PUT
-请求地址：http://127.0.0.1:5000/update/user/3
+请求地址：http://127.0.0.1:9999/update/user/3
 请求头：
 Content-Type: application/json
 
-Body：{"username": "wintest", "token": "f54f9d6ebba2c75d45ba00a8832cb593", "sex": "1", "address": "广州市天河区", "password": "12345678", "telephone": "13500010003"}
+Body：{"admin_user": "wintest", "token": "f54f9d6ebba2c75d45ba00a8832cb593", "sex": "1", "address": "广州市天河区", "password": "12345678", "telephone": "13500010003"}
 ```
 
-- 删除用户接口请求示例：
+- 删除用户接口请求示例（ token 可以从用户登录成功后的接口返回数据中获取）：：
 
 ```
 请求方式：POST
-请求地址：http://127.0.0.1:5000/delete/user/5
+请求地址：http://127.0.0.1:9999/delete/user/test
 请求头：
 Content-Type: application/json
 
-Body：{"username": "wintest", "token": "wintest1587830406"}
+Body：{"admin_user": "wintest", "token": "wintest1587830406"}
 ```
